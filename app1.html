@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter app</title>
+    <style>
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .allbtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 12px;
+      }
+
+      #add,
+      #minas {
+        background-color: skyblue;
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: none;
+        font-size: 23px;
+        cursor: pointer;
+      }
+
+      #num {
+        background-color: black;
+        color: #ffff;
+        border: 2px solid #000;
+        font-size: 24px;
+        padding: 35px;
+        margin: 23px;
+        border-radius: 15px;
+      }
+
+      .reset {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #resetbtn {
+        background-color: red;
+        color: #000;
+        border: none;
+        padding: 12px;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Counter app</h1>
+    <div class="maindiv">
+      <div class="allbtn">
+        <button id="add">+</button>
+        <div id="num">0</div>
+        <button id="minas">-</button>
+      </div>
+      <div class="reset">
+        <button id="resetbtn">Reset</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let Counter = 0;
+    const add = document.getElementById("add");
+    const num = document.getElementById("num");
+    const minas = document.getElementById("minas");
+    const reset = document.getElementById("resetbtn");
+    // add button
+
+    add.addEventListener("click", () => {
+      Counter++;
+      num.innerHTML = Counter;
+    });
+
+    // minas button
+
+    minas.addEventListener("click", () => {
+      Counter--;
+      num.innerHTML = Counter;
+    });
+
+    // reset button
+
+    reset.addEventListener("click", () => {
+      Counter = 0;
+      num.innerHTML = Counter;
+    });
+  </script>
+</html>
